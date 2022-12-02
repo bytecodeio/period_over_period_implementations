@@ -5,11 +5,11 @@
 ##    -Llooker 2020, Lookml period over period analysis in different dialects, [views],https://github.com/llooker/period_over_period_analysis
 ##
 ## Created by: Carl Clifford - Bytecode IO
-## Create Date: 11/29/2002
+## Create Date: 11/29/2022
 ##
-## Modified by:
-## Modified Date:
-## Comments:
+## Modified by: Carl Clifford
+## Modified Date: 12/2/2022
+## Comments: Added SQL Dialects
 
 
 
@@ -33,6 +33,10 @@ view: method5 {
 
   parameter: compare_to {label: "2b. Compare To:"}
   dimension_group: date_in_period {hidden:yes}
+
+
+
+### - BIGQUERY {
 
   dimension: period_2_start {
     view_label: "_PoP"
@@ -67,6 +71,128 @@ view: method5 {
             {% date_end previous_date_range %}
         {% endif %};;
     }
+
+### } / - END BIGQUERY
+
+### - REDSHIFT {
+
+  # dimension: period_2_start {
+  #   view_label: "_PoP"
+  #   description: "Calculates the start of the previous period"
+  #   type: date
+  #   sql:
+  #     {% if compare_to._in_query %}
+  #         {% if compare_to._parameter_value == "Period" %}
+  #         DATEADD(DAY, -${days_in_period}, DATE({% date_start current_date_range %}))
+  #         {% else %}
+  #         DATEADD({% parameter compare_to %}, -1, DATE({% date_start current_date_range %}))
+  #         {% endif %}
+  #     {% else %}
+  #         {% date_start previous_date_range %}
+  #     {% endif %};;
+  #   hidden:  yes
+  # }
+
+  # dimension: period_2_end {
+  #   hidden:  yes
+  #   view_label: "_PoP"
+  #   description: "Calculates the end of the previous period"
+  #   type: date
+  #   sql:
+  #     {% if compare_to._in_query %}
+  #         {% if compare_to._parameter_value == "Period" %}
+  #         DATEADD(DAY, -1, DATE({% date_start current_date_range %}))
+  #         {% else %}
+  #         DATEADD({% parameter compare_to %}, -1, DATEADD(DAY, -1, DATE({% date_end current_date_range %})))
+  #         {% endif %}
+  #     {% else %}
+  #         {% date_end previous_date_range %}
+  #     {% endif %};;
+  # }
+
+
+  ### } / - END REDSHIFT
+
+### - SNOWFLAKE {
+
+
+  # dimension: period_2_start {
+  #   view_label: "_PoP"
+  #   description: "Calculates the start of the previous period"
+  #   type: date
+  #   sql:
+  #       {% if compare_to._in_query %}
+  #           {% if compare_to._parameter_value == "Period" %}
+  #           DATEADD(DAY, -${days_in_period}, DATE({% date_start current_date_range %}))
+  #           {% else %}
+  #           DATEADD({% parameter compare_to %}, -1, DATE({% date_start current_date_range %}))
+  #           {% endif %}
+  #       {% else %}
+  #           {% date_start previous_date_range %}
+  #       {% endif %};;
+  #   hidden:  yes
+  # }
+
+  # dimension: period_2_end {
+  #   hidden:  yes
+  #   view_label: "_PoP"
+  #   description: "Calculates the end of the previous period"
+  #   type: date
+  #   sql:
+  #       {% if compare_to._in_query %}
+  #           {% if compare_to._parameter_value == "Period" %}
+  #           DATEADD(DAY, -1, DATE({% date_start current_date_range %}))
+  #           {% else %}
+  #           DATEADD({% parameter compare_to %}, -1, DATEADD(DAY, -1, DATE({% date_end current_date_range %})))
+  #           {% endif %}
+  #       {% else %}
+  #           {% date_end previous_date_range %}
+  #       {% endif %};;
+  # }
+
+### } / - END SNOWFLAKE
+
+### - MYSQL {
+
+
+  # dimension: period_2_start {
+  #   view_label: "_PoP"
+  #   description: "Calculates the start of the previous period"
+  #   type: date
+  #   sql:
+  #       {% if compare_to._in_query %}
+  #           {% if compare_to._parameter_value == "Period" %}
+  #           DATE_ADD(DATE({% date_start current_date_range %}), INTERVAL -${days_in_period} DAY)
+  #           {% else %}
+  #           DATE_ADD(DATE({% date_start current_date_range %}), INTERVAL -1 {% parameter compare_to %})
+  #           {% endif %}
+  #       {% else %}
+  #           {% date_start previous_date_range %}
+  #       {% endif %};;
+  #   hidden:  yes
+  # }
+
+  # dimension: period_2_end {
+  #   hidden:  yes
+  #   view_label: "_PoP"
+  #   description: "Calculates the end of the previous period"
+  #   type: date
+  #   sql:
+  #       {% if compare_to._in_query %}
+  #           {% if compare_to._parameter_value == "Period" %}
+  #           DATE_ADD(DATE({% date_start current_date_range %}), INTERVAL -1 DAY)
+  #           {% else %}
+  #           DATE_ADD(DATE_ADD(DATE({% date_end current_date_range %}), INTERVAL -1 DAY), INTERVAL -1 {% parameter compare_to %}) )
+  #           {% endif %}
+  #       {% else %}
+  #           {% date_end previous_date_range %}
+  #       {% endif %};;
+  # }
+
+### } / - END MYSQL
+
+
+
   }
 
 explore: method5 {

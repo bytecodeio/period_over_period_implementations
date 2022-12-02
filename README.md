@@ -1,51 +1,188 @@
-<h1><span style="color:#2d7eea">README - Your LookML Project</span></h1>
+<html>
 
-<h2><span style="color:#2d7eea">LookML Overview</span></h2>
 
-LookML is a data modeling language for describing dimensions, fields, aggregates and relationships based on SQL.
+<div class=WordSection1>
 
-LookML is powerful because it:
+<p class=MsoNormal style='margin-bottom:.1in;line-height:normal;background:
+white'><b><span style='font-size:23.5pt;font-family:"var(--brand-font-family-brand)",serif;
+color:#2D7EEA'>README   Period-Over-Period Implementations</span></b></p>
 
-- **Is all about reusability**: Most data analysis requires the same work to be done over and over again. You extract
-raw data, prepare it, deliver an analysis... and then are never able touse any of that work again. This is hugely
-inefficient, since the next analysis often involves many of the same steps. With LookML, once you define a
-dimension or a measure, you continue to build on it, rather than having to rewrite it again and again.
-- **Empowers end users**:  The data model that data analysts and developers create in LookML condenses and
-encapsulates the complexity of SQL, it and lets analysts get the knowledge about what their data means out of
-their heads so others can use it. This enables non-technical users to do their jobs &mdash; building dashboards,
-drilling to row-level detail, and accessing complex metrics &mdash; without having to worry about what’s behind the curtain.
-- **Allows for data governance**: By defining business metrics in LookML, you can ensure that Looker is always a
-credible single source of truth.
+<p class=MsoNormal style='margin-bottom:13.2pt;line-height:normal;background:
+white'><span style='font-size:10.5pt;font-family:"inherit",serif;color:#3A4245'>LookML
+code in this project has been developed using base code from: </span></p>
 
-The Looker application uses a model written in LookML to construct SQL queries against a particular database that
-business analysts can [Explore](https://docs.looker.com/r/exploring-data) on. For an overview on the basics of LookML, see [What is LookML?](https://docs.looker.com/r/what-is-lookml)
+<p class=MsoNormal style='margin-bottom:13.2pt;text-indent:.5in;line-height:
+normal;background:white'><span style='font-size:10.5pt;font-family:"inherit",serif;
+color:#3A4245'>-Molly Lippsett 2022, Methods for Period Over Period (PoP)
+Analysis in Looker,[LookML
+Example],https://community.looker.com/technical-tips-tricks-1021/methods-for-period-over-period-pop-analysis-in-looker-30823</span></p>
 
-<h2><span style="color:#2d7eea">Learn to Speak Looker</span></h2>
-R
-A LookML project is a collection of LookML files that describes a set of related [views](https://docs.looker.com/r/terms/view-file), [models](https://docs.looker.com/r/terms/model-file), and [Explores](https://docs.looker.com/r/terms/explore).
-- A [view](https://docs.looker.com/r/terms/view-file) (.view files) contains information about how to access or calculate information from each table (or
-across multiple joined tables). Here you’ll typically define the view, its dimensions and measures, and its field sets.
-- A [model](https://docs.looker.com/r/terms/model-file) (.model file) contains information about which tables to use and how they should be joined together.
-Here you’ll typically define the model, its Explores, and its joins.
-- An [Explore](https://docs.looker.com/r/terms/explore) is the starting point for business users to query data, and it is the end result of the LookML you are
-writing. To see the Explores in this project, select an Explore from the Explore menu.
+<p class=MsoNormal style='margin-bottom:13.2pt;text-indent:.5in;line-height:
+normal;background:white'><span style='font-size:10.5pt;font-family:"inherit",serif;
+color:#3A4245'> -Llooker 2022, Lookml period over period analysis in different
+dialects, [views],https://github.com/llooker/period_over_period_analysis</span></p>
 
-<h2><span style="color:#2d7eea">Exploring Data</span></h2>
+<p class=MsoNormal style='margin-bottom:.1in;line-height:normal;background:
+white'><b><span style='font-size:23.5pt;font-family:"var(--brand-font-family-brand)",serif;
+color:#3A4245'>&nbsp;</span></b></p>
 
-Ad-hoc data discovery is one of Looker’s most powerful and unique features. As you evaluate use cases for your
-trial, consider what business areas you would like to explore. Open the Explore menu in the main navigation to see
-the Explores you are building.
+<p class=MsoNormal style='margin-top:.1in;margin-right:0in;margin-bottom:.1in;
+margin-left:0in;line-height:normal;background:white'><b><span style='font-size:
+19.0pt;font-family:"var(--brand-font-family-brand)",serif;color:#2D7EEA'>Available
+Methods</span></b></p>
 
-<h2><span style="color:#2d7eea">The Development Workflow</span></h2>
+<p class=MsoNormal style='margin-bottom:13.2pt;line-height:normal;background:
+white'><span style='font-size:10.5pt;font-family:"inherit",serif;color:#3A4245'>The
+following methods have been implemented in this project for easy lift and drop
+into other projects. Selections can be made according to required period comparison
+and complexity preference.  Instructions for implementing each are detailed
+below.</span></p>
 
-To support a multi-developer environment, Looker is integrated with Git for version control. Follow [these directions](https://docs.looker.com/r/develop/git-setup)
-to set up Git for your project. To edit LookML, expand the Develop drop-down and toggle on [Development Mode](https://docs.looker.com/r/terms/dev-mode). In
-Development Mode, changes you make to the LookML model exist only in your account until you commit the
-changes and push them to your production model.
+<p class=MsoNormal style='margin-bottom:13.2pt;text-indent:.5in;line-height:
+normal;background:white'><span style='font-size:10.5pt;font-family:"inherit",serif;
+color:#3A4245'>&nbsp;</span></p>
 
-<h2><span style="color:#2d7eea">Additional Resources</span></h2>
+<p style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:.75in;
+text-indent:-.25in;background:white'><span style='font-size:10.0pt;font-family:
+Symbol;color:#202124'> <span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;font-family:Roboto;color:#202124'>1.
+Any Two Native Timeframes</span></p>
 
-To learn more about LookML and how to develop visit:
-- [Looker User Guide](https://looker.com/guide)
-- [Looker Help Center](https://help.looker.com)
-- [Looker University](https://training.looker.com/)
+<p style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:.75in;
+text-indent:-.25in;background:white;box-sizing: border-box;overflow-wrap: break-word;
+font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;text-align:
+start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-thickness: initial;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:10.0pt;font-family:Symbol;color:#202124'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;font-family:Roboto;color:#202124'>2.
+Any Two Native Timeframes (with Liquid)</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:.75in;
+text-indent:-.25in;background:white;box-sizing: border-box;overflow-wrap: break-word;
+font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;text-align:
+start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-thickness: initial;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:10.0pt;font-family:Symbol;color:#202124'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;font-family:Roboto;color:#202124'>3.
+Current Period and Previous Period</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:.75in;
+text-indent:-.25in;background:white;box-sizing: border-box;overflow-wrap: break-word;
+font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;text-align:
+start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-thickness: initial;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:10.0pt;font-family:Symbol;color:#202124'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;font-family:Roboto;color:#202124'>4.
+Current Period and Many Previous Periods</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:.75in;
+text-indent:-.25in;background:white;box-sizing: border-box;overflow-wrap: break-word;
+font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;text-align:
+start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-thickness: initial;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:10.0pt;font-family:Symbol;color:#202124'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;font-family:Roboto;color:#202124'>5.
+Current Period and Any Arbitrary Period</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:.75in;
+text-indent:-.25in;background:white;box-sizing: border-box;overflow-wrap: break-word;
+font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;text-align:
+start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-thickness: initial;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:10.0pt;font-family:Symbol;color:#202124'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;font-family:Roboto;color:#202124'>6.
+Any Two Arbitrary Periods</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:.75in;
+text-indent:-.25in;background:white;box-sizing: border-box;overflow-wrap: break-word;
+font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;text-align:
+start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-thickness: initial;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:10.0pt;font-family:Symbol;color:#202124'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;font-family:Roboto;color:#202124'>7.
+Arbitrary Period and Directly Previous Period</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:6.0pt;margin-left:.75in;
+text-indent:-.25in;background:white;box-sizing: border-box;overflow-wrap: break-word;
+font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;text-align:
+start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-thickness: initial;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-size:10.0pt;font-family:Symbol;color:#202124'> <span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.5pt;font-family:Roboto;color:#202124'>8.
+Arbitrary Period and Many Previous Periods</span></p>
+
+<p class=MsoNormal style='margin-bottom:13.2pt;line-height:normal;background:
+white'><b><span style='font-size:10.5pt;font-family:"inherit",serif;color:#3A4245'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:13.2pt;line-height:normal;background:
+white'><span style='color:black'><img width=1294 height=716 id="Picture 2"
+src="README_files/image001.png" alt="Table&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal style='margin-top:.1in;margin-right:0in;margin-bottom:.1in;
+margin-left:0in;line-height:normal;background:white'><b><span style='font-size:
+19.0pt;font-family:"var(--brand-font-family-brand)",serif;color:#2D7EEA'>Method
+1</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:13.2pt;line-height:normal;background:
+white'><span style='font-size:10.5pt;font-family:"inherit",serif;color:#3A4245'>Yadda.</span></p>
+
+<p class=MsoNormal style='margin-top:.1in;margin-right:0in;margin-bottom:.1in;
+margin-left:0in;line-height:normal;background:white'><b><span style='font-size:
+19.0pt;font-family:"var(--brand-font-family-brand)",serif;color:#2D7EEA'>Method
+1</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:13.2pt;line-height:normal;background:
+white'><span style='font-size:10.5pt;font-family:"inherit",serif;color:#3A4245'>Yadda.</span></p>
+
+<p class=MsoNormal style='margin-top:.1in;margin-right:0in;margin-bottom:.1in;
+margin-left:0in;line-height:normal;background:white'><b><span style='font-size:
+19.0pt;font-family:"var(--brand-font-family-brand)",serif;color:#2D7EEA'>Method
+1</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:13.2pt;line-height:normal;background:
+white'><span style='font-size:10.5pt;font-family:"inherit",serif;color:#3A4245'>Yadda.</span></p>
+
+<p class=MsoNormal style='margin-top:.1in;margin-right:0in;margin-bottom:.1in;
+margin-left:0in;line-height:normal;background:white'><b><span style='font-size:
+19.0pt;font-family:"var(--brand-font-family-brand)",serif;color:#2D7EEA'>Method
+1</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:13.2pt;line-height:normal;background:
+white'><span style='font-size:10.5pt;font-family:"inherit",serif;color:#3A4245'>Yadda.</span></p>
+
+<p class=MsoNormal style='margin-top:.1in;margin-right:0in;margin-bottom:.1in;
+margin-left:0in;line-height:normal;background:white'><b><span style='font-size:
+19.0pt;font-family:"var(--brand-font-family-brand)",serif;color:#2D7EEA'>Method
+1</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:13.2pt;line-height:normal;background:
+white'><span style='font-size:10.5pt;font-family:"inherit",serif;color:#3A4245'>Yadda.</span></p>
+
+<p class=MsoNormal style='margin-top:.1in;margin-right:0in;margin-bottom:.1in;
+margin-left:0in;line-height:normal;background:white'><b><span style='font-size:
+19.0pt;font-family:"var(--brand-font-family-brand)",serif;color:#2D7EEA'>Method
+1</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:13.2pt;line-height:normal;background:
+white'><span style='font-size:10.5pt;font-family:"inherit",serif;color:#3A4245'>Yadda.</span></p>
+
+<p class=MsoNormal style='margin-top:.1in;margin-right:0in;margin-bottom:.1in;
+margin-left:0in;line-height:normal;background:white'><b><span style='font-size:
+19.0pt;font-family:"var(--brand-font-family-brand)",serif;color:#2D7EEA'>Method
+1</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:13.2pt;line-height:normal;background:
+white'><span style='font-size:10.5pt;font-family:"inherit",serif;color:#3A4245'>Yadda.</span></p>
+
+</div>
+
+</body>
+
+</html>

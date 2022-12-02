@@ -5,7 +5,7 @@
 ##    -Llooker 2020, Lookml period over period analysis in different dialects, [views],https://github.com/llooker/period_over_period_analysis
 ##
 ## Created by: Carl Clifford - Bytecode IO
-## Create Date: 11/29/2002
+## Create Date: 11/29/2022
 ##
 ## Modified by:
 ## Modified Date:
@@ -41,6 +41,8 @@ view: method6 {
 
 ## ------------------ HIDDEN HELPER DIMENSIONS  ------------------ ##
 
+### - BIGQUERY {
+
   dimension: days_from_start_first {
     view_label: "_PoP"
     # hidden: yes
@@ -61,6 +63,69 @@ view: method6 {
     # Redshift doc: "If the second date or time is earlier than the first date or time, the result is negative."
     sql: DATE_DIFF( ${created_date}, DATE({% date_start second_period_filter %}), DAY)  ;;
   }
+
+### } / - END BIGQUERY
+
+### - REDSHIFT {
+
+
+  # dimension: days_from_start_first {
+  #   view_label: "_PoP"
+  #   hidden: yes
+  #   type: number
+  #   sql: DATEDIFF(day,  {% date_start first_period_filter %}, ${created_date}) ;;
+  # }
+
+  # dimension: days_from_start_second {
+  #   view_label: "_PoP"
+  #   hidden: yes
+  #   type: number
+  #   sql: DATEDIFF(day,  {% date_start second_period_filter %}, ${created_date}) ;;
+  # }
+
+
+  ### } / - END REDSHIFT
+
+### - SNOWFLAKE {
+
+  # dimension: days_from_start_first {
+  #   view_label: "_PoP"
+  #   hidden: yes
+  #   type: number
+  #   sql: DATEDIFF(day,  {% date_start first_period_filter %}, ${created_date}) ;;
+  # }
+
+  # dimension: days_from_start_second {
+  #   view_label: "_PoP"
+  #   hidden: yes
+  #   type: number
+  #   sql: DATEDIFF(day,  {% date_start second_period_filter %}, ${created_date}) ;;
+  # }
+
+
+### } / - END SNOWFLAKE
+
+### - MYSQL {
+
+  # dimension: days_from_start_first {
+  #   view_label: "_PoP"
+  #   hidden: yes
+  #   type: number
+  #   sql: DATEDIFF(${created_date}, {% date_start first_period_filter %}) ;;
+  # }
+
+  # dimension: days_from_start_second {
+  #   view_label: "_PoP"
+  #   hidden: yes
+  #   type: number
+  #   sql: DATEDIFF(${created_date}, {% date_start second_period_filter %}) ;;
+  # }
+
+
+### } / - END MYSQL
+
+
+
 
 ## ------------------ DIMENSIONS TO PLOT ------------------ ##
 

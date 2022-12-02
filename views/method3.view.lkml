@@ -5,11 +5,11 @@
 ##    -Llooker 2020, Lookml period over period analysis in different dialects, [views],https://github.com/llooker/period_over_period_analysis
 ##
 ## Created by: Carl Clifford - Bytecode IO
-## Create Date: 11/29/2002
+## Create Date: 11/29/2022
 ##
-## Modified by:
-## Modified Date:
-## Comments:
+## Modified by: Carl Clifford
+## Modified Date: 12/2/2022
+## Comments: Added SQL Dialects
 
 
 
@@ -64,6 +64,8 @@ view: method3 {
 
 ## ------------------ HIDDEN HELPER DIMENSIONS  ------------------ ##
 
+### - BIGQUERY {
+
   dimension: days_in_period {
     # hidden:  yes
     view_label: "_PoP"
@@ -117,6 +119,181 @@ view: method3 {
     ;;
   }
 
+
+### } / - END BIGQUERY
+
+### - REDSHIFT {
+
+  # dimension: days_in_period {
+  #   hidden:  yes
+  #   view_label: "_PoP"
+  #   description: "Gives the number of days in the current period date range"
+  #   type: number
+  #   sql: DATEDIFF(DAY, DATE({% date_start current_date_range %}), DATE({% date_end current_date_range %})) ;;
+  # }
+
+  # dimension: period_2_start {
+  #   hidden:  yes
+  #   view_label: "_PoP"
+  #   description: "Calculates the start of the previous period"
+  #   type: date
+  #   sql:
+  #     {% if compare_to._parameter_value == "Period" %}
+  #     DATEADD(DAY, -${days_in_period}, DATE({% date_start current_date_range %}))
+  #     {% else %}
+  #     DATEADD({% parameter compare_to %}, -1, DATE({% date_start current_date_range %}))
+  #     {% endif %};;
+  # }
+
+  # dimension: period_2_end {
+  #   hidden:  yes
+  #   view_label: "_PoP"
+  #   description: "Calculates the end of the previous period"
+  #   type: date
+  #   sql:
+  #     {% if compare_to._parameter_value == "Period" %}
+  #     DATEADD(DAY, -1, DATE({% date_start current_date_range %}))
+  #     {% else %}
+  #     DATEADD({% parameter compare_to %}, -1, DATEADD(DAY, -1, DATE({% date_end current_date_range %})))
+  #     {% endif %};;
+  # }
+
+  # dimension: day_in_period {
+  #   hidden: yes
+  #   description: "Gives the number of days since the start of each period. Use this to align the event dates onto the same axis, the axes will read 1,2,3, etc."
+  #   type: number
+  #   sql:
+  #       {% if current_date_range._is_filtered %}
+  #           CASE
+  #           WHEN {% condition current_date_range %} ${created_raw} {% endcondition %}
+  #           THEN DATEDIFF(DAY, DATE({% date_start current_date_range %}), ${created_date}) + 1
+  #           WHEN ${created_date} between ${period_2_start} and ${period_2_end}
+  #           THEN DATEDIFF(DAY, ${period_2_start}, ${created_date}) + 1
+  #           END
+  #       {% else %} NULL
+  #       {% endif %}
+  #       ;;
+  # }
+
+### } / - END REDSHIFT
+
+### - SNOWFLAKE {
+
+  # dimension: days_in_period {
+  #   hidden:  yes
+  #   view_label: "_PoP"
+  #   description: "Gives the number of days in the current period date range"
+  #   type: number
+  #   sql: DATEDIFF(DAY, DATE({% date_start current_date_range %}), DATE({% date_end current_date_range %})) ;;
+  # }
+
+  # dimension: period_2_start {
+  #   hidden:  yes
+  #   view_label: "_PoP"
+  #   description: "Calculates the start of the previous period"
+  #   type: date
+  #   sql:
+  #       {% if compare_to._parameter_value == "Period" %}
+  #       DATEADD(day, -${days_in_period}, DATE({% date_start current_date_range %}))
+  #       {% else %}
+  #       DATEADD({% parameter compare_to %}, -1, DATE({% date_start current_date_range %}))
+  #       {% endif %};;
+  #   convert_tz: no
+  # }
+
+  # dimension: period_2_end {
+  #   hidden:  yes
+  #   view_label: "_PoP"
+  #   description: "Calculates the end of the previous period"
+  #   type: date
+  #   sql:
+  #       {% if compare_to._parameter_value == "Period" %}
+  #       DATEADD(day, -1, DATE({% date_start current_date_range %}))
+  #       {% else %}
+  #       DATEADD({% parameter compare_to %}, -1, DATEADD(day, -1, DATE({% date_end current_date_range %})))
+  #       {% endif %};;
+  #   convert_tz: no
+  # }
+
+  # dimension: day_in_period {
+  #   hidden: yes
+  #   description: "Gives the number of days since the start of each period. Use this to align the event dates onto the same axis, the axes will read 1,2,3, etc."
+  #   type: number
+  #   sql:
+  #         {% if current_date_range._is_filtered %}
+  #             CASE
+  #             WHEN {% condition current_date_range %} ${created_raw} {% endcondition %}
+  #             THEN DATEDIFF(day, DATE({% date_start current_date_range %}), ${created_date}) + 1
+  #             WHEN ${created_date} between ${period_2_start} and ${period_2_end}
+  #             THEN DATEDIFF(day, ${period_2_start}, ${created_date}) + 1
+  #             END
+  #         {% else %} null
+  #         {% endif %}
+  #         ;;
+  # }
+
+### } / - END SNOWFLAKE
+
+### - MYSQL {
+
+  # dimension: days_in_period {
+  #   hidden:  yes
+  #   view_label: "_PoP"
+  #   description: "Gives the number of days in the current period date range"
+  #   type: number
+  #   sql: DATEDIFF(DATE({% date_end current_date_range %}), DATE({% date_start current_date_range %})) ;;
+  # }
+
+  # dimension: period_2_start {
+  #   # hidden:  yes
+  #   view_label: "_PoP"
+  #   description: "Calculates the start of the previous period"
+  #   type: date
+  #   sql:
+  #       {% if compare_to._parameter_value == "Period" %}
+  #       DATE_ADD(DATE({% date_start current_date_range %}), INTERVAL -${days_in_period} DAY)
+  #       {% else %}
+  #       DATE_ADD(DATE({% date_start current_date_range %}), INTERVAL -1 {% parameter compare_to %})
+  #       {% endif %};;
+  #   convert_tz: no
+  # }
+
+  # dimension: period_2_end {
+  #   #hidden:  yes
+  #   view_label: "_PoP"
+  #   description: "Calculates the end of the previous period"
+  #   type: date
+  #   sql:
+  #       {% if compare_to._parameter_value == "Period" %}
+  #       DATE_ADD(DATE({% date_start current_date_range %}), INTERVAL -1 DAY )
+  #       {% else %}
+  #       DATE_ADD(DATE_ADD(DATE({% date_end current_date_range %}), INTERVAL -1 DAY ), INTERVAL -1 {% parameter compare_to %})
+  #       {% endif %};;
+  #   convert_tz: no
+  # }
+
+  # dimension: day_in_period {
+  #   hidden: no
+  #   description: "Gives the number of days since the start of each period. Use this to align the event dates onto the same axis, the axes will read 1,2,3, etc."
+  #   type: number
+  #   sql:
+  #         {% if current_date_range._is_filtered %}
+  #             CASE
+  #             WHEN {% condition current_date_range %} ${created_raw} {% endcondition %}
+  #             THEN DATEDIFF(${created_date}, DATE({% date_start current_date_range %})) +1
+  #             WHEN ${created_date} between ${period_2_start} and ${period_2_end}
+  #             THEN DATEDIFF(${created_date}, ${period_2_start}) +1
+  #             END
+  #         {% else %} NULL
+  #         {% endif %}
+  #         ;;
+  # }
+
+### } / - END MYSQL
+
+
+
+
   dimension: order_for_period {
     hidden: yes
     type: number
@@ -144,6 +321,8 @@ view: method3 {
 
 ## ------------------ DIMENSIONS TO PLOT ------------------ ##
 
+### - BIGQUERY {
+
   dimension_group: date_in_period {
     description: "Use this as your grouping dimension when comparing periods. Aligns the previous periods onto the current period"
     label: "Current Period"
@@ -165,6 +344,85 @@ view: method3 {
       year]
     convert_tz: no
   }
+
+### } / - END BIGQUERY
+
+### - REDSHIFT {
+
+  # dimension_group: date_in_period {
+  #   description: "Use this as your grouping dimension when comparing periods. Aligns the previous periods onto the current period"
+  #   label: "Current Period"
+  #   type: time
+  #   sql: DATEADD(DAY, ${day_in_period} - 1, DATE({% date_start current_date_range %})) ;;
+  #   view_label: "_PoP"
+  #   timeframes: [
+  #     date,
+  #     hour_of_day,
+  #     day_of_week,
+  #     day_of_week_index,
+  #     day_of_month,
+  #     day_of_year,
+  #     week_of_year,
+  #     month,
+  #     month_name,
+  #     month_num,
+  #     year]
+  # }
+
+### } / - END REDSHIFT
+
+### - SNOWFLAKE {
+
+  # dimension_group: date_in_period {
+  #   description: "Use this as your grouping dimension when comparing periods. Aligns the previous periods onto the current period"
+  #   label: "Current Period"
+  #   type: time
+  #   sql: DATEADD(day, ${day_in_period} - 1, DATE({% date_start current_date_range %})) ;;
+  #   view_label: "_PoP"
+  #   timeframes: [
+  #     date,
+  #     hour_of_day,
+  #     day_of_week,
+  #     day_of_week_index,
+  #     day_of_month,
+  #     day_of_year,
+  #     week_of_year,
+  #     month,
+  #     month_name,
+  #     month_num,
+  #     year]
+  #   convert_tz: no
+  # }
+
+### } / - END SNOWFLAKE
+
+### - MYSQL {
+
+  # dimension_group: date_in_period {
+  #   description: "Use this as your grouping dimension when comparing periods. Aligns the previous periods onto the current period"
+  #   label: "Current Period"
+  #   type: time
+  #   sql: DATE_ADD(DATE({% date_end current_date_range %}), INTERVAL ${day_in_period} - 1 DAY) ;;
+  #   view_label: "_PoP"
+  #   timeframes: [
+  #     date,
+  #     hour_of_day,
+  #     day_of_week,
+  #     day_of_week_index,
+  #     day_of_month,
+  #     day_of_year,
+  #     week_of_year,
+  #     month,
+  #     month_name,
+  #     month_num,
+  #     year]
+  #   convert_tz: no
+  # }
+
+### } / - END MYSQL
+
+
+
 
 
   dimension: period {
