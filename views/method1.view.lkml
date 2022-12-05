@@ -18,7 +18,6 @@ view: method1 {
   extends: [order_items]
 
   dimension: id {
-
     primary_key: yes
     hidden: yes
     type: number
@@ -58,9 +57,53 @@ view: method1 {
 
 ### WTD, MTD and YTD filters
 
+  parameter: to_date_selection {
+    label: "Display only Period to Date"
+    view_label: "_PoP"
+    type: unquoted
+    default_value: "No"
+    allowed_value: {
+      label: "WTD_Only"
+      value:"WTD"
+      }
+    allowed_value: {
+      label: "MTD_Only"
+      value:"MTD"
+    }
+    allowed_value: {
+      label: "YTD_Only"
+      value:"YTD"
+    }
+    allowed_value: {
+      label:"Display all Dates"
+      value:"No"
+      }
+  }
 
+
+  dimension: to_date {
+    group_label: "To-Date Filters"
+    label: "1. To-Date"
+    view_label: "_PoP"
+    type: yesno
+    sql:
+      {% if to_date_selection._parameter_value == 'WTD' %}
+        ${wtd_only}
+      {% elsif to_date_selection._parameter_value == 'MTD' %}
+        ${mtd_only}
+      {% elsif to_date_selection._parameter_value == 'YTD' %}
+        ${ytd_only}
+      {% else %}
+        1 = 1
+      {% endif %};;
+  }
 
 ### - BIGQUERY {
+
+
+
+
+
 
   dimension: wtd_only {
     group_label: "To-Date Filters"
