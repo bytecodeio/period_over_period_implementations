@@ -562,17 +562,9 @@ white'><b><span style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-fami
 "Times New Roman";mso-bidi-font-family:"Times New Roman";color:#202124'>Quick Implementation:</span></b><span
 style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:"Times New Roman";
 mso-bidi-font-family:"Times New Roman";color:#202124'><o:p></o:p></span></p>
-<p class=MsoNormal style='margin-bottom:6.0pt;line-height:normal;background:
-white'><b><span style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:
-"Times New Roman";mso-bidi-font-family:"Times New Roman";color:#202124'>Sample Dashboard: <a href="https://looker.bytecode.io/dashboards/period_over_period::method_5_compare_current_period_with_another_arbitrary_period?Current%20Date%20Range=2%20months&Previous%20Date%20Range%20(Custom):=3%20months%20ago%20for%201%20days"><u>Method 5</u></a></span></b><span
-style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:"Times New Roman";
-mso-bidi-font-family:"Times New Roman";color:#202124'><o:p></o:p></span></p>
 
-<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
-margin-left:.5in;line-height:normal;background:white'><span style='font-size:
-10.5pt;font-family:Roboto;mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:
-"Times New Roman";color:#202124'><o:p>&nbsp;</o:p></span></p>
-<ol start=1 type=1>
+
+
  <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
      auto;line-height:normal;mso-list:l12 level1 lfo17;tab-stops:list .5in;
      background:white'><span style='font-size:10.5pt;font-family:Roboto;
@@ -609,7 +601,15 @@ margin-left:.5in;line-height:normal;background:white'><span style='font-size:
      mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>Update
      the  include:  and  extends:  statements in the method5 view to reflect
      location of method3 code if you have renamed or copied into another view.<o:p></o:p></span></li>
-</ol>
+
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:normal;background:
+white'><b><span style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:
+"Times New Roman";mso-bidi-font-family:"Times New Roman";color:#202124'>Sample Dashboard: <a href="https://looker.bytecode.io/dashboards/period_over_period::method_5_compare_current_period_with_another_arbitrary_period?Current%20Date%20Range=2%20months&Previous%20Date%20Range%20(Custom):=3%20months%20ago%20for%201%20days"><u>Method 5</u></a></span></b><span
+style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#202124'><o:p></o:p></span></p>
+
+
 
 <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
 margin-left:.5in;line-height:normal;background:white'><span style='font-size:
