@@ -81,6 +81,52 @@ view: method1 {
   }
 
 
+  parameter: YTD_selection {
+    label: "Display only Year to Date"
+    view_label: "_PoP"
+    type: unquoted
+    default_value: "No"
+    allowed_value: {
+      label: "YTD_Only"
+      value:"YTD"
+    }
+    allowed_value: {
+      label:"Display all Dates"
+      value:"No"
+    }
+  }
+
+  parameter: MTD_selection {
+    label: "Display only Month to Date"
+    view_label: "_PoP"
+    type: unquoted
+    default_value: "No"
+    allowed_value: {
+      label: "MTD_Only"
+      value:"MTD"
+    }
+    allowed_value: {
+      label:"Display all Dates"
+      value:"No"
+    }
+  }
+
+  parameter: WTD_selection {
+    label: "Display only Week to Date"
+    view_label: "_PoP"
+    type: unquoted
+    default_value: "No"
+    allowed_value: {
+      label: "WTD_Only"
+      value:"WTD"
+    }
+    allowed_value: {
+      label:"Display all Dates"
+      value:"No"
+    }
+  }
+
+
   dimension: to_date {
     group_label: "To-Date Filters"
     label: "1. To-Date"
@@ -98,9 +144,49 @@ view: method1 {
       {% endif %};;
   }
 
+  dimension: year_to_date {
+    group_label: "To-Date Filters"
+    label: "Year-To-Date"
+    view_label: "_PoP"
+    type: yesno
+    sql:
+      {% if YTD_selection._parameter_value == 'YTD' %}
+        ${ytd_only}
+      {% else %}
+        1 = 1
+      {% endif %};;
+  }
+
+  dimension: month_to_date {
+    group_label: "To-Date Filters"
+    label: "Month-To-Date"
+    view_label: "_PoP"
+    type: yesno
+    sql:
+      {% if MTD_selection._parameter_value == 'MTD' %}
+        ${mtd_only}
+      {% else %}
+        1 = 1
+      {% endif %};;
+  }
+
+  dimension: week_to_date {
+    group_label: "To-Date Filters"
+    label: "Week-To-Date"
+    view_label: "_PoP"
+    type: yesno
+    sql:
+      {% if YTD_selection._parameter_value == 'WTD' %}
+        ${wtd_only}
+      {% else %}
+        1 = 1
+      {% endif %};;
+  }
+
+
+
+
 ### - BIGQUERY {
-
-
 
 
 
@@ -109,6 +195,7 @@ view: method1 {
     group_label: "To-Date Filters"
     label: "WTD"
     view_label: "_PoP"
+    hidden: yes
     type: yesno
     sql:  (EXTRACT(DAYOFWEEK FROM ${created_raw}) < EXTRACT(DAYOFWEEK FROM CURRENT_DATE())
                   OR
@@ -124,6 +211,7 @@ view: method1 {
     group_label: "To-Date Filters"
     label: "MTD"
     view_label: "_PoP"
+    hidden: yes
     type: yesno
     sql:  (EXTRACT(DAY FROM ${created_raw}) < EXTRACT(DAY FROM CURRENT_DATE())
                   OR
@@ -139,6 +227,7 @@ view: method1 {
     group_label: "To-Date Filters"
     label: "YTD"
     view_label: "_PoP"
+    hidden: yes
     type: yesno
     sql:  (EXTRACT(DAYOFYEAR FROM ${created_raw}) < EXTRACT(DAYOFYEAR FROM CURRENT_DATE())
                   OR

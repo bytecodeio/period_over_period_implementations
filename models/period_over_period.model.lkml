@@ -10,9 +10,10 @@
 # Define the database connection to be used for this model.
 connection: "looker_partner_demo"
 
-# include all the views
+# include all views
 include: "/views/**/*.view"
-
+# include all dashboards
+include: "/dashboards/*.dashboard.lookml"
 
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
