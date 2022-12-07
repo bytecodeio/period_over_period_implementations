@@ -453,16 +453,11 @@ mso-bidi-font-family:"Times New Roman";color:#202124'><o:p></o:p></span></p>
      the <span class=GramE>dimension</span> and measures in the method1 file, update
      the  SQL:  statements and names fitting your project.<o:p></o:p></span></li>
  <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
-     auto;line-height:normal;mso-list:l11 level1 lfo16;tab-stops:list .5in;
-     background:white'><a name="_Hlk121147200"><span style='font-size:10.5pt;
-     font-family:Roboto;mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:
-     "Times New Roman"'>Create a method3.view file in your target project and
-     paste in the method3 </span></a><span class=SpellE><span style='mso-bookmark:
-     _Hlk121147200'><span style='font-size:10.5pt;font-family:Roboto;
-     mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>LookML</span></span></span><span
-     style='mso-bookmark:_Hlk121147200'><span style='font-size:10.5pt;
-     font-family:Roboto;mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:
-     "Times New Roman"'> code if you have not already.<o:p></o:p></span></span></li>
+     auto;line-height:normal;mso-list:l13 level1 lfo15;tab-stops:list .5in;
+     background:white'><span style='font-size:10.5pt;font-family:Roboto;
+     mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>Create
+     a method3.view file in your target project and paste in the method3 <span
+     class=SpellE>LookML</span> code if you have not already.<o:p></o:p></span></li>
  <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
      auto;line-height:normal;mso-list:l11 level1 lfo16;tab-stops:list .5in;
      background:white'><span style='mso-bookmark:_Hlk121147200'><span
@@ -557,50 +552,53 @@ mso-bidi-font-family:"Times New Roman";color:#202124'><o:p></o:p></span></p>
      dates requires replicating all the code, per date).<o:p></o:p></span></li>
 </ul>
 
+
 <p class=MsoNormal style='margin-bottom:6.0pt;line-height:normal;background:
 white'><b><span style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:
 "Times New Roman";mso-bidi-font-family:"Times New Roman";color:#202124'>Quick Implementation:</span></b><span
 style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:"Times New Roman";
 mso-bidi-font-family:"Times New Roman";color:#202124'><o:p></o:p></span></p>
 
-
-
+<ol start=1 type=1>
  <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
-     auto;line-height:normal;mso-list:l12 level1 lfo17;tab-stops:list .5in;
+     auto;line-height:normal;mso-list:l11 level1 lfo16;tab-stops:list .5in;
      background:white'><span style='font-size:10.5pt;font-family:Roboto;
      mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>Create
      a method1.view file in your target project and paste in the method1 <span
      class=SpellE>LookML</span> code if you have not already.<o:p></o:p></span></li>
  <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
-     auto;line-height:normal;mso-list:l12 level1 lfo17;tab-stops:list .5in;
+     auto;line-height:normal;mso-list:l11 level1 lfo16;tab-stops:list .5in;
      background:white'><span style='font-size:10.5pt;font-family:Roboto;
      mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>In
      the <span class=GramE>dimension</span> and measures in the method1 file, update
      the  SQL:  statements and names fitting your project.<o:p></o:p></span></li>
  <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
-     auto;line-height:normal;mso-list:l12 level1 lfo17;tab-stops:list .5in;
+     auto;line-height:normal;mso-list:l13 level1 lfo15;tab-stops:list .5in;
      background:white'><span style='font-size:10.5pt;font-family:Roboto;
      mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>Create
      a method3.view file in your target project and paste in the method3 <span
      class=SpellE>LookML</span> code if you have not already.<o:p></o:p></span></li>
  <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
-     auto;line-height:normal;mso-list:l12 level1 lfo17;tab-stops:list .5in;
-     background:white'><span style='font-size:10.5pt;font-family:Roboto;
-     mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>Update
-     the  include:  and  extends:  statements in the method3 view to reflect
-     location of method1 code if you have renamed or copied into another view.<o:p></o:p></span></li>
+     auto;line-height:normal;mso-list:l11 level1 lfo16;tab-stops:list .5in;
+     background:white'><span style='mso-bookmark:_Hlk121147200'><span
+     style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:"Times New Roman";
+     mso-bidi-font-family:"Times New Roman"'>Update the  include:  and  extends:
+     statements in the method3 view to reflect location of method1 code if you
+     have renamed or copied into another view.<o:p></o:p></span></span></li>
+ <span style='mso-bookmark:_Hlk121147200'></span>
  <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
-     auto;line-height:normal;mso-list:l12 level1 lfo17;tab-stops:list .5in;
+     auto;line-height:normal;mso-list:l11 level1 lfo16;tab-stops:list .5in;
      background:white'><span style='font-size:10.5pt;font-family:Roboto;
      mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>Create
      a method5.view file in your target project and paste in the method5 <span
      class=SpellE>LookML</span> code if you have not already.<o:p></o:p></span></li>
  <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
-     auto;line-height:normal;mso-list:l12 level1 lfo17;tab-stops:list .5in;
+     auto;line-height:normal;mso-list:l11 level1 lfo16;tab-stops:list .5in;
      background:white'><span style='font-size:10.5pt;font-family:Roboto;
      mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>Update
      the  include:  and  extends:  statements in the method5 view to reflect
      location of method3 code if you have renamed or copied into another view.<o:p></o:p></span></li>
+</ol>
 
 
 <p class=MsoNormal style='margin-bottom:6.0pt;line-height:normal;background:
@@ -684,36 +682,37 @@ white'><b><span style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-fami
 style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:"Times New Roman";
 mso-bidi-font-family:"Times New Roman";color:#202124'><o:p></o:p></span></p>
 
-<ul type=disc>
+<ol start=1 type=1>
  <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
-     auto;line-height:normal;mso-list:l16 level1 lfo12;tab-stops:list .5in;
+     auto;line-height:normal;mso-list:l11 level1 lfo16;tab-stops:list .5in;
      background:white'><span style='font-size:10.5pt;font-family:Roboto;
      mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>Create
      a method1.view file in your target project and paste in the method1 <span
      class=SpellE>LookML</span> code if you have not already.<o:p></o:p></span></li>
  <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
-     auto;line-height:normal;mso-list:l16 level1 lfo12;tab-stops:list .5in;
+     auto;line-height:normal;mso-list:l11 level1 lfo16;tab-stops:list .5in;
      background:white'><span style='font-size:10.5pt;font-family:Roboto;
      mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>In
      the <span class=GramE>dimension</span> and measures in the method1 file, update
      the  SQL:  statements and names fitting your project.<o:p></o:p></span></li>
  <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
-     auto;line-height:normal;mso-list:l16 level1 lfo12;tab-stops:list .5in;
+     auto;line-height:normal;mso-list:l13 level1 lfo15;tab-stops:list .5in;
      background:white'><span style='font-size:10.5pt;font-family:Roboto;
      mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>Create
      a method6.view file in your target project and paste in the method6 <span
      class=SpellE>LookML</span> code.<o:p></o:p></span></li>
  <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
-     auto;line-height:normal;mso-list:l16 level1 lfo12;tab-stops:list .5in;
-     background:white'><span style='font-size:10.5pt;font-family:Roboto;
-     mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>Update
+     auto;line-height:normal;mso-list:l11 level1 lfo16;tab-stops:list .5in;
+     background:white'><span style='mso-bookmark:_Hlk121147200'><span
+     style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:"Times New Roman";
+     mso-bidi-font-family:"Times New Roman"'>Update
      the  include:  and  extends:  statements in the method6 view to reflect
-     location of method1 code if you have renamed or copied into another view.<o:p></o:p></span></li>
- <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
-     auto;line-height:normal;mso-list:l16 level1 lfo12;tab-stops:list .5in;
-     background:white'><span style='font-size:10.5pt;font-family:Roboto;
-     mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'><o:p>&nbsp;</o:p></span></li>
-</ul>
+     location of method1 code if you have renamed or copied into another view.<o:p></o:p></span></span></li>
+ <span style='mso-bookmark:_Hlk121147200'></span>
+</ol>
+
+
+
 
 <p class=MsoNormal style='margin-bottom:6.0pt;line-height:normal;background:
 white'><b><span style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:
