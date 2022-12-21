@@ -103,6 +103,7 @@ view: order_items {
   measure: total_sale_price {
     type: sum
     sql: ${sale_price} ;;
+    value_format_name: decimal_2
   }
 
   measure: average_sale_price {

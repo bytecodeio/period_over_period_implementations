@@ -720,6 +720,104 @@ white'><b><span style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-fami
 style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:"Times New Roman";
 mso-bidi-font-family:"Times New Roman";color:#202124'><o:p></o:p></span></p>
 
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+margin-left:.5in;line-height:normal;background:white'><span style='font-size:
+10.5pt;font-family:Roboto;mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:
+"Times New Roman";color:#202124'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-top:.1in;margin-right:0in;margin-bottom:.1in;
+margin-left:0in;line-height:normal;background:white'><b><span style='font-size:
+19.0pt;font-family:"var\(--brand-font-family-brand\)";color:#2D7EEA'>Method 7: Arbitrary Period and Directly Previous Period - Compare Any Period with the Previous Preceding Period of the Same Length</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:normal;background:
+white'><b><span style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:
+"Times New Roman";mso-bidi-font-family:"Times New Roman";color:#202124'>Advantage:</span></b><span
+style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#202124'><o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+     auto;line-height:normal;mso-list:l14 level1 lfo11;tab-stops:list .5in;
+     background:white'><span style='font-size:10.5pt;font-family:Roboto;
+     mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>The previous period dynamically matches the interval of the selected date range.<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+     auto;line-height:normal;mso-list:l14 level1 lfo11;tab-stops:list .5in;
+     background:white'><span style='font-size:10.5pt;font-family:Roboto;
+     mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>Limited Liquid is required in the implementation.<o:p></o:p></span></li>
+      <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+     auto;line-height:normal;mso-list:l14 level1 lfo11;tab-stops:list .5in;
+     background:white'><span style='font-size:10.5pt;font-family:Roboto;
+     mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>Filtered measures are supported.<o:p></o:p></span></li>
+      <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+     auto;line-height:normal;mso-list:l14 level1 lfo11;tab-stops:list .5in;
+     background:white'><span style='font-size:10.5pt;font-family:Roboto;
+     mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>The date range filter can be used on dashboards so that view-only users can manipulate the filter values.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:normal;background:
+white'><b><span style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:
+"Times New Roman";mso-bidi-font-family:"Times New Roman";color:#202124'>Disadvantages:</span></b><span
+style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#202124'><o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+     auto;line-height:normal;mso-list:l16 level1 lfo12;tab-stops:list .5in;
+     background:white'><span style='font-size:10.5pt;font-family:Roboto;
+     mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>This method does not allow for gaps between periods; only directly preceding periods can be compared.<o:p></o:p></span></li>
+
+ </ul>
+
+
+
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:normal;background:
+white'><b><span style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:
+"Times New Roman";mso-bidi-font-family:"Times New Roman";color:#202124'>Quick Implementation:</span></b><span
+style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#202124'><o:p></o:p></span></p>
+
+<ol start=1 type=1>
+ <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+     auto;line-height:normal;mso-list:l11 level1 lfo16;tab-stops:list .5in;
+     background:white'><span style='font-size:10.5pt;font-family:Roboto;
+     mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>Create
+     a method1.view file in your target project and paste in the method1 <span
+     class=SpellE>LookML</span> code if you have not already.<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+     auto;line-height:normal;mso-list:l11 level1 lfo16;tab-stops:list .5in;
+     background:white'><span style='font-size:10.5pt;font-family:Roboto;
+     mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>In
+     the <span class=GramE>dimension</span> and measures in the method1 file, update
+     the  SQL:  statements and names fitting your project.<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+     auto;line-height:normal;mso-list:l13 level1 lfo15;tab-stops:list .5in;
+     background:white'><span style='font-size:10.5pt;font-family:Roboto;
+     mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman"'>Create
+     a method7.view file in your target project and paste in the method7 <span
+     class=SpellE>LookML</span> code.<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:#202124;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+     auto;line-height:normal;mso-list:l11 level1 lfo16;tab-stops:list .5in;
+     background:white'><span style='mso-bookmark:_Hlk121147200'><span
+     style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:"Times New Roman";
+     mso-bidi-font-family:"Times New Roman"'>Update
+     the  include:  and  extends:  statements in the method7 view to reflect
+     location of method1 code if you have renamed or copied into another view.<o:p></o:p></span></span></li>
+ <span style='mso-bookmark:_Hlk121147200'></span>
+</ol>
+
+
+
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:normal;background:
+white'><b><span style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:
+"Times New Roman";mso-bidi-font-family:"Times New Roman";color:#202124'>Sample Dashboard: <a href="https://looker.bytecode.io/dashboards/period_over_period::method_7_arbitrary_period_and_directly_previous_period__compare_any_period_with_the_previous_preceding_period_of_the_same_length?Date%20Filter=1%20years"><u>Method 7</u></a></span></b><span
+style='font-size:10.5pt;font-family:Roboto;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:#202124'><o:p></o:p></span></p>
+
+
+
 <p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
 margin-left:.5in;line-height:normal;background:white'><span style='font-size:
 10.5pt;font-family:Roboto;mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:

@@ -100,3 +100,28 @@ explore: products {
     relationship: many_to_one
   }
 }
+
+
+### - BIGQUERY {
+
+
+
+### } / - END BIGQUERY
+
+### - REDSHIFT {
+
+
+
+### } / - END REDSHIFT
+
+### - SNOWFLAKE {
+
+
+
+### } / - END SNOWFLAKE
+
+### - MYSQL {
+
+
+
+### } / - END MYSQL
