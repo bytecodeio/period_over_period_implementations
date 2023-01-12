@@ -6,7 +6,7 @@ white'><b><span style='font-size:23.5pt;font-family:"var\(--brand-font-family-br
 color:#2D7EEA'>Period-Over-Period Implementations</span></b></p>
 
 <p class=MsoNormal style='margin-bottom:13.2pt;line-height:normal;background:
-white'><span style='font-size:10.5pt;font-family:inherit;color:#3A4245'>The  <span
+white'><span style='font-size:10.5pt;font-family:inherit;color:#3A4245'>This  <span
 class=SpellE>period_over_period</span>  project implements popular Looker
 period-over-period methods.<span style='mso-spacerun:yes'>  </span>The
 functionality can be replicated by copying <span class=SpellE>LookML</span>
@@ -34,6 +34,11 @@ white'><span style='font-size:10.5pt;font-family:inherit;color:#3A4245'>The foll
 methods have been implemented in this project for easy "lift and shift" into client
 projects. Selections can be made according to required period comparison and
 complexity preference.&nbsp; Instructions for implementing each are detailed below.</span></p>
+
+
+<p style="text-align:center;"><img src="https://uploads-us-west-2.insided.com/looker-en/attachment/cc8f8dd7-fd59-4562-8366-397f9955b8af.png" alt="Method Table"></p>
+<cite>Methods for Period Over Period (PoP) Analysis in Looker</cite> - Molly Lippsett 2022.
+
 
 <p class=MsoNormal style='margin-bottom:13.2pt;text-indent:.5in;line-height:
 normal;background:white'><span style='font-size:10.5pt;font-family:inherit;
@@ -104,7 +109,7 @@ mso-bidi-font-family:"Times New Roman";color:#202124'><o:p></o:p></span></p>
      target="_blank">filtered measures</a>. For example, logic such as &quot;%
      change vs previous period&quot; must be achieved with a&nbsp;<a
      href="https://docs.looker.com/exploring-data/using-table-calculations"
-     target="_blank">table calculation</a>, rather than with a <o:p></o:p></span></li>
+     target="_blank">table calculation</a>, rather than with a measure.</span></li>
 </ul>
 
 <p class=MsoNormal style='margin-bottom:6.0pt;line-height:normal;background:
