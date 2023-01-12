@@ -31,7 +31,7 @@ margin-left:0in;line-height:normal;background:white'><b><span style='font-size:
 
 <p class=MsoNormal style='margin-bottom:13.2pt;line-height:normal;background:
 white'><span style='font-size:10.5pt;font-family:inherit;color:#3A4245'>The following
-methods have been implemented in this project for easy lift and drop into other
+methods have been implemented in this project for easy "lift and shift" into client
 projects. Selections can be made according to required period comparison and
 complexity preference.&nbsp; Instructions for implementing each are detailed below.</span></p>
 
