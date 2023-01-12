@@ -12,6 +12,7 @@ connection: "looker_partner_demo"
 
 # include all views
 include: "/views/**/*.view"
+include: "/wip/**/*.view"
 # include all dashboards
 include: "/dashboards/*.dashboard.lookml"
 

@@ -3,7 +3,7 @@
 
 <p class=MsoNormal style='margin-bottom:.1in;line-height:normal;background:
 white'><b><span style='font-size:23.5pt;font-family:"var\(--brand-font-family-brand\)";
-color:#2D7EEA'>README   Period-Over-Period Implementations</span></b></p>
+color:#2D7EEA'>Period-Over-Period Implementations</span></b></p>
 
 <p class=MsoNormal style='margin-bottom:13.2pt;line-height:normal;background:
 white'><span style='font-size:10.5pt;font-family:inherit;color:#3A4245'>The  <span
@@ -58,7 +58,7 @@ mso-bidi-font-family:"Times New Roman";color:#202124'><o:p></o:p></span></p>
      can self-serve <span class=SpellE>PoP</span> analyses in <span
      class=GramE>an Explore</span>. Developing additional fields (unless you
      create a&nbsp;<span class=SpellE>yesno</span>&nbsp;<span class=SpellE>LookML</span>
-     field on which to filter, as in the examples above) or&nbsp;<a
+     field on which to filter, as in the dashboard example) or&nbsp;<a
      href="https://docs.looker.com/reference/liquid-variables" target="_blank">Liquid</a>&nbsp;implementation
      is not required.<o:p></o:p></span></li>
 </ul>
@@ -830,7 +830,7 @@ margin-left:0in;line-height:normal;background:white'><b><span style='font-size:
 <p class=MsoNormal style='margin-bottom:13.2pt;line-height:normal;background:
 white'><span class=SpellE><span style='font-size:10.5pt;font-family:inherit;
 color:#3A4245'>LookML</span></span><span style='font-size:10.5pt;font-family:
-inherit;color:#3A4245'> code in this project has been developed using base code
+inherit;color:#3A4245'> code in this project has been developed and enhanced by Bytecode IO developers using base code
 from: </span><o:p></o:p></p>
 
 <p class=MsoNormal style='margin-bottom:13.2pt;text-indent:.5in;line-height:
