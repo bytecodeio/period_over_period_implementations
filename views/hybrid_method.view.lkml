@@ -96,7 +96,7 @@ view: hybrid_method {
         {% if compare_to._parameter_value == "Period" %}
         DATE_ADD(DATE({% date_start current_date_range %}), INTERVAL ${days_in_period} DAY)
         {% elsif compare_to._parameter_value == "Custom" %}
-        DATE({% date_start ${custom_date_range} %})
+        DATE({% date_start custom_date_range %})
         {% else %}
         DATE_SUB(DATE({% date_start current_date_range %}), INTERVAL 1 {% parameter compare_to %})
         {% endif %};;
@@ -112,7 +112,7 @@ view: hybrid_method {
         {% if compare_to._parameter_value == "Period" %}
         DATE_SUB(DATE({% date_start current_date_range %}), INTERVAL 1 DAY)
         {% elsif compare_to._parameter_value == "Custom" %}
-        DATE({% date_end ${custom_date_range} %})
+        DATE({% date_end custom_date_range %})
         {% else %}
         DATE_SUB(DATE_SUB(DATE({% date_end current_date_range %}), INTERVAL 1 DAY), INTERVAL 1 {% parameter compare_to %})
         {% endif %};;
