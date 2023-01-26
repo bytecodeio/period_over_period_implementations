@@ -504,3 +504,6 @@ view: hybrid_method {
   }
 
 }
+explore: hybrid_method {
+  label: "Hybrid Method: Arbitrary date selection or period selection"
+}
