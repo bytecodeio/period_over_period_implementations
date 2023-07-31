@@ -16,6 +16,8 @@ include: "/wip/**/*.view"
 # include all dashboards
 include: "/dashboards/*.dashboard.lookml"
 
+
+
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
 
@@ -49,12 +51,12 @@ explore: events {
   }
 }
 
-
-
-
-
 explore: order_items {
-
+  sql_always_where: ${method_8.sql_always_where_inject} ;;
+  join: method_8 {
+    sql:  ;;
+    relationship: many_to_one
+  }
   join: users {
     type: left_outer
     sql_on: ${order_items.user_id} = ${users.id} ;;
@@ -101,28 +103,3 @@ explore: products {
     relationship: many_to_one
   }
 }
-
-
-### - BIGQUERY {
-
-
-
-### } / - END BIGQUERY
-
-### - REDSHIFT {
-
-
-
-### } / - END REDSHIFT
-
-### - SNOWFLAKE {
-
-
-
-### } / - END SNOWFLAKE
-
-### - MYSQL {
-
-
-
-### } / - END MYSQL
