@@ -7,4 +7,10 @@ remote_dependency: looker_period_control {
   override_constant: database_type {
     value: "bigquery"
   }
+  override_constant: date_display_format {
+    value: "%Y-%m-%d"
+  }
+  override_constant: time_display_format {
+    value: "%H:%M"
+  }
 }
