@@ -95,7 +95,7 @@ view: method4 {
     type: date
     sql:
       {% if compare_to._parameter_value == "Period" %}
-      DATE_ADD(${period_2_start}, INTERVAL -1 DAY)
+      DATE_ADD(${period_3_start}, INTERVAL -1 DAY)
       {% else %}
       DATE_ADD(DATE_ADD(DATE({% date_end current_date_range %}), INTERVAL -1 DAY), INTERVAL -3 {% parameter compare_to %})
       {% endif %};;
